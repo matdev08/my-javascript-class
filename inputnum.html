@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doc ument</title>
+</head>
+<style>
+    #show{
+        display: flex;
+        height: 85vh;
+        flex-direction: column;
+        flex-wrap: wrap;
+          
+    }
+</style>
+<body>
+    <input type="number" id="inp">
+    <input type="number" id="btn">
+    <button onclick="handleclick()">click</button>
+     <div id="show"></div>
+  
+
+    <script> 
+        let input = document.getElementById('inp')
+        let secondinput = document.getElementById('btn')
+
+       function handleclick(){
+        console.log(Number(input.value));
+       if (input.value === '' || secondinput.value === '') {
+        alert('pls input the field')
+       }
+
+       for (let i = Number(input.value); i <= Number(secondinput.value); i++) {
+        for(let y = 1; y <= 12; y++){
+          
+             show.innerHTML += `<p>${i} * ${y} = ${i * y}</p>`
+              console.log(y);  
+        }
+        
+       }
+    }
+    </script>
+</body>
+</html>

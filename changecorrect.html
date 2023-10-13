@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" onkeyup="handlechangeevent()" id="input">
+
+    <h1 id="display"></h1>
+
+
+    <script>
+        let show = document.querySelector('#display')
+        let inp = document.querySelector('#input')
+
+
+        function handlechangeevent(){
+            let val = inp.value.toLowerCase()
+
+             let modify = val.replace('sex', 'gender')   
+             show.innerHTML = modify
+             inp.value = modify       
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow-y: hidden;
+        }
+
+        .popUp{
+            width: 300px;
+            height: 300px;
+            background-color: crimson;
+          }
+
+        .hide{
+            display: none;
+          }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="popUp hide" id="box"></div>
+    </div>
+
+    <script>
+        let boxDelayTime = Math.floor(Math.random() * 6000)
+        let reactionTime = 0
+
+
+        function showBox() {
+            box.classList.toggle('hide')
+            startReactionCount()
+        }
+        let inter;
+        function startReactionCount() {
+            inter = setInterval(() => {
+                reactionTime++
+                console.log(reactionTime);
+            }, 100); 
+        }
+
+        setTimeout(() => {
+            showBox ()
+        }, boxDelayTime);
+
+        box.addEventListener('click', (e)=>{
+            clearInterval(inter)
+
+            if (reactionTime <= 5) {
+                alert ('you are very fast')
+                
+            }else if (reactionTime > 5 && reactionTime < 10){
+                alert ('you are good')
+            }else if (reactionTime >= 10 && reactionTime < 15){
+                alert ('you are fair')
+            }else if (reactionTime > 15){
+                alert ('you are slow')
+            }
+        })
+
+
+
+
+
+    </script>
+
+
+
+    
+</body>
+</html>

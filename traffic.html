@@ -1,0 +1,148 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        .container{
+            /* border: 1px solid gray; */
+            width: 100px;
+            height: 300px;
+            margin: auto;
+            display: flex;
+            border-radius: 20px;
+            margin-top: 50px;
+            flex-direction: column;
+            background-color: gray;
+            
+
+        }
+        .box1{
+            width: 80px;
+            height: 80px;
+            /* background-color: red; */
+            border-radius: 100%;
+            display: flex;
+            margin: auto;
+        }
+        .box2{
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            display: flex;
+            margin: auto;
+        }
+        .box3{
+            width: 80px;
+            height: 80px;
+            /* background-color: green; */
+            border-radius: 100%;
+            display: flex;
+            margin: auto;
+        }
+
+        #h1Tag{
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            margin-top: 30px;
+            background-color: black;
+            color: white;
+            font-size: 50px;
+            border-radius: 100%;
+
+
+        }
+    </style>
+<body>
+    <div class="container">
+        <div class="box1" id="red"></div>
+        <div class="box2" id="yellow"></div>
+        <div class="box3" id="green"></div>
+    </div>
+
+    <div id="h1Tag"></div>
+
+    <script>
+        let number = 30
+
+
+        function timer() {
+            number --
+
+            h1Tag.innerHTML = number 
+            if (number > 20) {
+                green.style.backgroundColor = ''
+                red.style.backgroundColor = 'red'  
+            }
+
+            if (number < 20 && number > 10) {
+                red.style.backgroundColor = ''
+                yellow.style.backgroundColor = 'yellow'
+                
+            }
+
+            if (number < 10) {
+                yellow.style.backgroundColor = ''
+                green.style.backgroundColor = 'green'
+            }
+
+            if (number === 1) {
+                number = 30
+            }
+            
+        } 
+
+        setInterval(() => {
+            timer ()
+        }, 1000);
+
+
+
+
+
+
+
+
+
+        function calcualte() {
+            let result = 4 * 5
+            return result
+            
+        }
+
+        
+        let user = 'boy'
+
+        function checkSomething() {
+            if (user === 'guy') {
+                return 'user is a boy'
+            }
+
+            else if (user === 'girl') {
+                return 'user is a girl'
+            }
+
+            else if (user === 'boy') {
+                return 'user is boy'
+            }
+
+
+        }
+        checkSomething ()
+
+       
+
+
+    </script>
+
+
+
+
+    
+</body>
+</html>

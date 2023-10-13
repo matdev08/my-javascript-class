@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+       <div><p>Local Storage</p></div>
+       <p id="display"></p>
+
+    <script>
+        let num = 20
+        let userName = 'taiwo'
+        let isLoggedIn = true
+        let user = {name: 'taiwo', age: 49, status: 'married'}
+
+        let userList = [
+             {name: 'taiwo', age: 49, status: 'married'},
+             {name: 'taiwo', age: 49, status: 'married'},
+             {name: 'taiwo', age: 49, status: 'married'}
+        ]
+
+
+        localStorage.setItem('age', num)
+        localStorage.setItem('userName', userName)
+        localStorage.setItem('userLoggedIn', isLoggedIn)
+        localStorage.setItem('user', JSON.stringify(user))
+        localStorage.setItem('userList', JSON.stringify(userList))
+
+
+      //  retreive items from local storage
+
+      let age = localStorage.getItem('age')
+      let name = localStorage.getItem('userName')
+      let useData = JSON.parse(localStorage.getItem('user'))
+
+      let userArr = JSON.parse(localStorage.getItem('uerList'))
+
+
+      
+    //   secondclass
+
+    let users = {
+        name: 'ben',
+        email: 'ben@gmail.com'
+    }
+
+    localStorage.setItem('name', JSON.stringify(users))
+
+    function getName(){
+        let user = JSON.parse(localStorage.getItem('name'))
+        display.innerText = user.name
+    }
+
+    // getName
+
+    function deleteUser(params){
+        localStorage.removeItem('transactionList')
+
+        localStorage.clear()
+    }
+   //deleteUser()
+    </script>
+</body>
+</html>

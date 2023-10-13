@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1tag">hello</h1>
+     <div class="div"></div>
+ 
+     <div class="show"></div>
+    <script>
+
+     let tag = document.querySelector('#h1tag')
+
+     let name = 'oslim'
+     let career = 'web dev'
+
+    //  tag.innerHTML += ' Good Morning' + ' ' + name + ' ' + career
+
+    // secondway  concatinate
+    tag.innerHTML += ` Good Morning ${name} ${career }`
+
+
+    let divtag = document.querySelector('.div')
+
+    divtag.innerHTML = `
+    <p>i am ptag</p>
+    <span> i am a span tag</span>
+    `
+
+ 
+    let showtag = document.querySelector('.show')
+     for (let i = 0; i <= 10; i++){
+        showtag.innerHTML += `
+        <p>i am repeating 10 times ${i}</p>
+        `
+     } 
+   
+
+    </script>
+</body>
+</html>

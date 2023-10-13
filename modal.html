@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow-y: hidden;
+    }
+    #modal{
+        width: 400px;
+        height: 400px;
+        background-color: #ccc;
+    }
+    .none{
+        display: none;
+    }
+</style>
+<body>
+   
+    <button onclick="togglemodal()">Show Modal</button>
+
+
+    <div class="container">
+        <div class="none" id="modal"></div>
+    </div>
+
+
+
+    <script>
+        let box = document.getElementById('modal')
+
+        // function togglemodal(){
+        //     // box.hidden =false
+        //     if (box.hidden === true) {
+        //         box.hidden = false
+        //     }else{
+        //         box.hidden = true
+        //     }
+        // }
+
+// anotherway
+
+        function togglemodal(){
+            box.classList.toggle('none')
+        }
+
+    </script>
+</body>
+</html>

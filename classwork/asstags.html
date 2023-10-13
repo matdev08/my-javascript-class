@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .error{
+        color: red;
+    }
+    .sucess{
+        color: green;
+    }
+</style>
+<body>
+    <div>
+        <div class="error">error</div>
+        <div class="error">success</div>
+        <div class="error">error</div>
+        <div class="error">success</div>
+        <div class="error">error</div>
+        <div class="error">success</div> 
+
+        <button onclick="handleClick()">Click</button>
+    </div>
+   
+
+  
+
+  <script>
+    let tags = document.querySelectorAll('.error')
+
+    console.log(tags);
+
+    function handleClick(){
+        for(let i = 0; i < tags.length; i++){
+            if (tags[i].innerHTML === 'Error'){
+                tags[i].innerHTML = 'success'
+                tags[i].classList.toggle('success')
+            }else if(tags[i].innerHTML === 'success'){
+                tags[i].innerHTML = 'Error'
+                tags[i].classList.toggle('error')
+            }
+        }
+    }
+  </script>
+</body>
+</html>

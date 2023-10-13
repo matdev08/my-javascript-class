@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <input type="text" id="inpval">
+    <button onclick="AddTodo()">Add</button>
+    <div id="display"></div>
+    
+
+
+    <script>
+
+        let allTodo = []
+        function AddTodo(){
+
+            let text = inpval.value
+
+         let obj = {
+            title: text,
+            status: false
+         }
+  
+         allTodo.push(obj)
+         showAll()
+        //  console.log(obj);
+
+        }
+
+        
+       function deleteList(index){
+
+       allTodo.splice(index, 1 )
+       showAll()
+ 
+
+
+       }
+
+        function showAll(){
+            display.innerHTML = ''
+             allTodo.forEach((element, i) => {
+            display.innerHTML += `<h1>${element.title}</h1> <span>${element.status}</span>
+             <button onclick="deleteList(${i})" > delete </button>`;
+                                                                                          
+        });
+
+    }
+
+
+
+    </script>
+
+
+</body>
+</html>

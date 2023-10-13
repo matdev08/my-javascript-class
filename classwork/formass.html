@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <STYle>
+        *{
+            margin: 5px;
+            padding: 0;
+        }
+        .fle{
+            display: flex;
+            /* background-color: orange; */
+            color: white;
+            gap: 10%;
+            /* margin-top: 70px; */
+            /* margin-left: 200px; */
+            
+        }
+        .tablet{
+            margin-top: 50px;
+        }
+        body{
+            background-color:brown;
+        }
+        .list{
+            display: flex;
+            gap: 10%;
+            margin-top: 100px;
+        }
+    </STYle>
+</head>
+<body>
+    
+<div class="tablet">
+    NAME:
+    <input type="text" id="Name" placeholder="NAME">
+    EMAIL:
+    <input type="text" id="email" placeholder="EMAIL">
+    AGE:
+    <input type="number" id="age" placeholder="AGE">
+
+    <button onclick="handlesubmit()">Submit</button>
+</div>
+
+<div class="table">
+    <div class="list">
+        <span>S/N</span>
+        <span>NAME</span>
+        <span>EMAIL</span>
+        <span>AGE</span>
+        <span>ACTION REQUIRED</span>
+    </div>
+</div>
+
+<div id="display"></div>
+
+
+<script>
+    let Allusers = []
+
+
+
+
+    function handlesubmit(){
+        let userName = Name.value
+        let emailVal = email.value
+        let ages = age.value
+
+         let theUsers ={
+            Name: userName,
+             email: emailVal, 
+             age: ages
+         }
+       Allusers.push(theUsers)
+       console.log(Allusers);
+       showNum()
+ 
+    }
+
+  
+    function deleteTodo(index){
+        Allusers.splice(index, 1)
+        showNum()
+    }
+
+
+    function showNum(){
+        display.innerHTML = ''
+        Allusers.forEach((elem, i) => {
+        display.innerHTML += `<div class="fle">
+            <span>${i+1}</span>
+            <span>${elem.Name}</span>
+            <span>${elem.email}</span>
+            <span>${elem.age}</span>
+            <button onclick="editTodo(${i})">Edit</button>
+            <button onclick="deleteTodo(${i})">Delete</button>
+
+            </div>`
+        })
+    }
+
+
+    function editTodo(index){
+        let res = Allusers.find(function(elem, i){
+                return i === index
+            })
+
+            let newVal = prompt(res, '')
+
+            if (newVal){
+                Allusers.splice(index, 1, newVal)
+            }
+            showNum()
+    }
+</script>
+</body>
+</html>
+
+
+
+
+    

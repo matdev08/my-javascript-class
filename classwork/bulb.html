@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+
+            background-color: brown;
+            padding: 50px
+        }
+        .container{
+        text-align: center;
+    
+        }
+        .container h1{
+            margin-right: 80px ;
+        }
+        #light{
+           margin: auto -80px 90px ;
+        }
+        #btnon{
+            /* margin: auto 80px; */
+            padding: 10px;
+            background-color: green;
+            border: none;
+            
+    
+        }
+        #btnoff{
+            padding:10px; 
+            /* margin-left:-10px;  */
+            background-color: red;
+            border: none;
+        }
+    
+    </style>
+</head>
+<body>
+    
+<div class="container">
+
+    <h1>BULB</h1>
+    <img id="light" src="https://i.postimg.cc/XYV0Jh3X/hd-light-bulb-on-off-png-31626305624ofqq78jchu-removebg-preview.png" alt="">
+    <BUtton id="btnon" onclick="switchon()">ON</BUtton>
+    <button id="btnoff" onclick="switchoff()">OFF</button>
+</div>
+
+
+
+
+
+<script>
+
+
+    function switchoff(){
+        document.getElementById('light').src='https://i.postimg.cc/XYV0Jh3X/hd-light-bulb-on-off-png-31626305624ofqq78jchu-removebg-preview.png'
+    }
+
+    // btnoff()
+
+
+    function switchon(){
+        document.getElementById('light').src='https://i.postimg.cc/d1GbjXBM/yellow-light-bulb-vector-154953-removebg-preview.png'
+    }
+
+    // btnon()
+
+</script>
+</body>
+</html>

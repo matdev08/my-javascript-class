@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="show">
+
+    </div>
+
+    <div id="time"></div>
+
+    <script>
+        // setInterval
+        // setTimeout
+        function doSomething(){
+            // console.log('i am been called');
+            console.log(Math.floor(Math.random() * 2000));
+        }
+
+
+
+        // setInterval(() => {
+        //     doSomething()
+        // },[1000]);
+
+
+        // setTimeout(() => {
+        //     console.log('i am logging');
+        // },4000);
+
+
+
+        let photos = [
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz8g1T5W9mlBCp_yyllNTWLtRhwxCOB_302mpCc-OzBw&s',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH2nW_y6A58yiKsNkmz1dEQ2p-Pt14nWaNpvJpXPib1A&s',
+            'https://t3.ftcdn.net/jpg/05/85/86/44/360_F_585864419_kgIYUcDQ0yiLOCo1aRjeu7kRxndcoitz.jpg',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT83v3p907L0xhnV7BytNykYBKEQZ_9t_oz0517ZovD&s',
+            'https://m.media-amazon.com/images/I/71JKg+hD1iL.jpg'
+        ]
+        let index = 0
+        
+        function slideimg(){
+            show.innerHTML = `<img src="${photos[index]}" alt="">`
+        }
+
+slideimg()
+
+           let photoInter = setInterval(() => {
+                if (index <= photos.length) {
+                    index++
+                  slideimg()
+                }else{
+                    index = 0
+                     slideimg()
+                    // clearInterval(photoInter)
+                }
+            }, 2000);
+
+            let countDown = 40
+
+            function handleCountDown(){
+                countDown--
+                time.innerHTML =  countDown 
+                if (countDown === 0) {
+                    // clearInterval(inter)
+                    countDown = 40
+                }
+            }
+
+            let inter = setInterval(() => {
+                handleCountDown()
+            }, 1000);
+
+    </script>
+</body>
+</html>

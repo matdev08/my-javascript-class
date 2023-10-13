@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: aqua;
+    }
+    .container{
+        text-align: center;
+    }
+    .container h1{
+        font-size: 50px;
+        color: orange;
+    }
+    #btnon{
+        margin-left: 48%;
+        padding: 20px;
+        font-size: 20px;
+        background-color: brown;
+        color: green;
+        border: none;
+    }
+    
+</style>
+<body>
+    
+<div class="container">
+
+    <h1>Welcome to the light house</h1>
+    <img id="light" src="https://i.postimg.cc/XYV0Jh3X/hd-light-bulb-on-off-png-31626305624ofqq78jchu-removebg-preview.png"  alt="">
+</div>
+
+<button id="btnon" onclick="switchonoff()">on</button>
+
+
+
+<script>
+
+function switchonoff(){
+    if (btnon.innerHTML == "on"){
+        light.src="https://i.postimg.cc/d1GbjXBM/yellow-light-bulb-vector-154953-removebg-preview.png"
+        btnon.innerHTML = "off"
+    }else{
+        light.src="https://i.postimg.cc/XYV0Jh3X/hd-light-bulb-on-off-png-31626305624ofqq78jchu-removebg-preview.png"
+        btnon.innerHTML = "on"
+    }
+}
+
+
+
+
+
+
+
+
+
+// let bulboff = 'https://i.postimg.cc/XYV0Jh3X/hd-light-bulb-on-off-png-31626305624ofqq78jchu-removebg-preview.png'
+// let bulbon = 'https://i.postimg.cc/d1GbjXBM/yellow-light-bulb-vector-154953-removebg-preview.png'
+
+// let bulb = document.getElementById('light')
+// bulb.src = bulboff
+
+
+
+// function switchonoff(){
+//     if(bulb.src === bulboff){
+//         bulb.src = bulbon
+//     }
+//     else if(bulb.src === bulbon) {
+//         bulb.src = bulboff
+//     }
+// }
+
+ 
+// function turnoff() {
+//     if(turnoff.hidden === true){
+//         turnoff = false
+//     }
+//     else{
+//         turnoff = true
+//     }
+// }
+
+</script>
+</body>
+</html> 

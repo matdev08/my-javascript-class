@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+</head>
+<body>
+    
+<input type="text" id="inpval" onkeyup="handleChange()">
+<h1 class="show"></h1>
+<script>
+    let input = document.querySelector('#inpval')
+    let show = document.querySelector('.show')
+
+
+    function handleChange(){
+        console.log(input.value);
+
+        let inputvalue = input.value;  
+
+        if (input.value === 'male' || input.value === 'female'){
+            show.innerHTML = 'gender'
+        }
+        else if(inputvalue === 'gender') {
+            show.innerHTML = 'male or female'
+        }
+         else(
+            show.innerHTML = inputvalue
+         )   
+        
+    }
+</script>
+</body>
+</html>

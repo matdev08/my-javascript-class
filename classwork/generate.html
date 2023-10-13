@@ -1,0 +1,303 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: rgb(43, 66, 46);
+        }
+        .contain{
+            display: flex;
+            gap: 40%;
+        }
+        h1{
+            color:rgb(229, 250, 232);
+          padding-left: 40%;
+        }
+        .selector{
+            display: flex;
+            gap: 5px;
+            margin-top: 30px;
+        }
+        .load{
+            margin-top: 30px;    
+        }
+        #loading{
+            /* padding:9px 25px; */
+        }
+        .amount{
+            display: flex;
+            gap: 5px;
+            margin-top: 50px;
+        }
+        #amountRef{
+            /* padding: 7px 40px; */
+        }
+        #networkRef{
+            /* padding: 5px 10px; */
+        }
+        /* #loadRef{
+            display: flex;
+            gap: 5px;
+        } */
+        .code{
+            display: flex;
+            gap: 5px;
+            margin-top: 50PX;
+        }
+        #view{
+            display: flex;
+            gap: 70px;
+            margin-top: 40px;
+            color: rgb(215, 236, 217);
+        }
+        #box td{
+            background-color: rgb(30, 17, 1);
+            color:rgba(109, 216, 136, 0.495) ;
+        }
+         .box1{
+            display: flex;
+            gap: 95px;
+            background-color: rgb(30, 17, 1);
+            color: rgba(109, 216, 136, 0.495);
+            row-gap: 20px;
+             /* padding: 10px;  */
+        } 
+        button{
+            background-color: rgb(3, 95, 15);
+            /* padding: 12px; */
+            border-radius: 10px;
+            color: white;
+            border: none;
+        }
+        span{
+            font-size: 20px;
+            color: bisque; 
+        }
+        #errorCode{
+            font-size: 15px;
+            /* position: absolute; */
+            /* bottom: 50px; */
+            /* margin-top: 60px; */
+        }
+    </style>
+</head>
+<body>
+    
+      <h1>Recharge Card Generator</h1>
+     <div class="contain">
+ 
+        <div class="selector">
+            <span>SELECT NETWORK:</span>
+            <select name="" id="networkRef">
+                <option value="glo">glo</option>
+                <option value="mtn">mtn</option>
+                <option value="airtel">airtel</option>
+                <option value="mobile">9mobile</option>
+              </select>
+        </div>
+    
+        <div class="load"  id="loadRef">
+            <span>CODE:</span>
+            <input type="text" name="" id="loading">
+            <Button onclick="handleLoad()">Recharge</Button>
+            <p id="errorCode"></p>
+        </div>
+
+     </div>
+   
+
+    <div class="amount">
+        <span>AMOUNT:</span>
+        <select name="" id="amountRef">
+            <option value="1000">1000</option>
+            <option value="500">500</option>
+            <option value="200">200</option>
+            <option value="100">100 </option>
+        </select>
+    </div>
+
+    <div class="code" id="codeRef">
+        <span>CODE:</span>
+        <input type="number" name="" id="coding">
+        <Button onclick="handleClick()">Generate</Button>
+        <button onclick="handleSave()">Save pin</button>
+    </div>
+
+     <div class="container" id="view">
+         <table class="table" id="box">
+            <th scope="col">S/N</th>
+            <th scope="col">NETWORK OPERATOR</th>
+            <th scope="col">AMOUNT</th>
+            <th scope="col">CODE</th>   
+            <th scope="col">PIN</th>      
+            <th scope="col">DATE CREATED</th>   
+            <th scope="col">DATE USED</th>  
+            <th scope="col">STATUS</th>
+            <th scope="col">ACTION</th>  
+            <tbody id="display"></tbody> 
+        </table>
+     </div>
+    
+    <!-- <div class="view">
+        <span>S/N</span>
+        <SPan>Network Operator</SPan>
+        <span>Amount</span>
+        <span>Code</span>
+        <span>Pin</span>
+         <span>Status</span>
+         <span>Date Created</span>
+         <span>Date Used</span>
+    </div> -->
+    
+
+</body> 
+<script>
+     let generate = document.getElementById('coding')
+     let show = document.getElementById("display")
+     let networkRef = document.getElementById("networkRef")
+     let amountRef = document.getElementById("amountRef")
+
+
+      let cards = []
+      let cardPin = "";
+
+      let networkCode = {
+        glo: '*123*',
+        mtn: '*555*' ,
+        airtel: '*126*',
+        mobile: '*222*'  
+      }
+
+    //   let today = new Date();
+    //   let day = today.getDate();
+    //   let month = today.getMonth()+ 1;
+    //   let year = today.getFullYear();
+
+ function handleClick(){    
+    cardPin = "";
+
+   for(let index = 0; index < 11; index++){
+    cardPin += Math.floor((Math.random() * 10))
+
+   }
+   document.getElementById('coding').value = cardPin
+
+   let today = new Date();
+      let day = today.getDate();
+      let month = today.getMonth()+ 1;
+      let year = today.getFullYear();
+
+// let numbers = Math.floor((Math.random() * 200000000000) + 1)
+// console.log(numbers);
+//     generate.value = numbers
+ }
+//  console.log(generate);
+
+ function handleSave(){
+    let today = new Date();
+      let day = today.getDate();
+      let month = today.getMonth()+ 1;
+      let year = today.getFullYear();
+
+   let networkSelect = networkRef.value;
+   let choseAmount = amountRef.value;
+   let pin = cardPin;
+   let printref = `${networkCode[networkSelect]}${pin}#`; 
+   let dateref = `${day}-${month}-${year}`
+   let dateVal = `${day}-${month}-${year}`
+// console.log('hi');
+   let generated = {
+    networkVal: networkSelect,
+    chooseVal: choseAmount,
+    coding: pin,
+    printref: printref,
+    dateref: dateref,
+    dateVal: dateVal,
+    status: false,
+   };
+   cards.push(generated);
+
+   displayUser()
+}
+
+function handleLoad(){
+    let loadInp = document.getElementById('loading').value;
+    let selectPin = cards.find((index) => index.printref === loadInp);
+
+    if (selectPin) {
+       if( selectPin.status === true){
+        // alert('Has already been recharged')
+        errorCode.innerHTML = 'Pin used already'
+        errorCode.style.color = 'red';
+       }else{
+        selectPin.status = true;
+
+        displayUser()
+        // alert('Top-up successful'); 
+        errorCode.innerHTML = 'Top-up successful'
+        errorCode.style.color = 'green';
+       }    
+    }
+    else{
+        // alert('Enter valid pin')
+        errorCode.innerHTML = 'Enter valid pin'
+        errorCode.style.color = 'red';
+    }
+
+    // if (coding) {
+    //     element.coding = true;
+
+    //     displayUser()
+    //     // alert('Top-up successful');
+    //     errorCode.innerHTML = 'Top-up successful'
+    //     errorCode.style.color = 'green';
+    // }
+    // else{
+    //     // alert('Pin already exist')
+    //     errorCode.innerHTML = 'Top-up successful'
+    //     errorCode.style.color = 'green';
+    // }
+}
+
+function deleteList(index) {
+    cards.splice(index, 1);
+    displayUser()
+}
+
+function displayUser(){
+    show.innerHTML = ""
+
+    cards.forEach((element, index) => {
+        show.innerHTML += `
+        <table class="box1">
+            <td>${index + 1}</td>
+            <td>${element.networkVal}</td>
+            <td>${element.chooseVal}</td>
+            <td>${element.coding}</td>
+            <td>${element.printref}</td>
+            <td>${element.dateref}</td>
+            <td>${element.dateVal}</td>
+            <td>${element.status ? 'used' : 'unused'}</td>
+           <td> <button onclick="deleteList(${index})">Delete</button></td>
+            </table>
+
+        `;
+    });
+    localStorage.setItem('cards', JSON.stringify(cards))
+}
+
+function getLocalData(){
+    saveData = localStorage.getItem('cards')
+    if(saveData) {
+        cards = JSON.parse(saveData);
+        displayUser()
+    }
+}
+getLocalData()
+ 
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html> 

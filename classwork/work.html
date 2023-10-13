@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+
+        body{
+            margin: 0;
+        }
+        .container{
+            position: relative;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            display: none;
+        }
+        .modal{
+            background-color: red;
+            width: 400px;
+            height: 200px;
+        }
+        .modal p{
+            font-size: 15px;
+            color: white;
+            align-items: center;
+        }
+        .cancel{
+            font-size: 40px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="container" id="container">
+    <div class="modal" id="modal">
+        <span class="cancel" id="cancelbtn" onclick="cancelmodal()">&times;</span>
+        <p>David Adedeji Adeleke OON, who is professionally known as Davido, is an American-born Nigerian singer, songwriter and record producer. Davido was born in Atlanta, Georgia, United States, and raised in Lagos, Nigeria. He made his music debut as a member of the group KB International.</p>
+    </div>
+</div>
+
+<button id="displaymodalbutton" onclick="displaymodal()">display modal</button>
+
+
+
+
+
+
+
+<script>
+
+let container = document.getElementById('container')
+let cancelbtn = document.getElementById('cancelbtn')
+let displaymodalbutton = document.getElementById('displaymodalbutton')
+
+function displaymodal(){
+    container.style.display = 'flex'
+}
+function cancelmodal(){
+    container.style.display = 'none'
+}
+
+</script>
+</body>
+</html>

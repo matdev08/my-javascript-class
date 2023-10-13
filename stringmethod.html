@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     
+<div class="show"></div>
+
+    <script>
+          
+    let show = document.querySelector('.show')
+
+    let greeting = 'hello good morning'
+
+    console.log(greeting.length);   //to check the total length
+    console.log(greeting.includes('hello123'));  // check and return a boolean, if a specify string include
+    console.log(greeting.endsWith('123'));
+    console.log(greeting.startsWith('hello321')); // check the startswith of the specify string
+    console.log(greeting.indexOf('m'));           // check the position of the specify string
+    console.log(greeting.lastIndexOf('m'));
+    console.log(greeting.charAt(15));
+    console.log(greeting.toUpperCase());
+    console.log(greeting.toLowerCase());
+
+    console.log(greeting.replace('hello', 'hi'));
+
+    let greet = 'Hello World!'
+
+    console.log(greet.slice(6,10));
+     
+    console.log(greeting.split(' '));
+    let dob = '1999-08-20'
+
+    console.log(dob.split('-'));
+
+    let year = dob.split('-')[0]
+    let month = dob.split('-')[1]
+    let day = dob.split('-')[2]
+
+    let age = 2023 - year
+
+    console.log((month, day, year));
+    show.innerHTML = `your year is ${year} and your month is ${month} that mean you are ${age} years old`
+
+    let str = ``
+    </script>
+</body>
+</html>

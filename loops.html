@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+ <p id="ptag">i am 1 tag 1</p>
+ <p id="ptag">i am 1 tag 2</p>
+ <p id="ptag">i am 1 tag 3</p>
+ <p id="ptag">i am 1 tag 4</p>
+ <p id="ptag">i am 1 tag 5</p>
+ <p id="ptag">i am 1 tag 6</p>
+ <p id="ptag">i am 1 tag 7</p>
+ <p id="ptag">i am 1 tag 8</p>
+
+
+    
+ <p id="ptag">red</p>
+ <p id="ptag">yellow</p>
+ <p id="ptag">green</p>
+ <p id="ptag">purple</p>
+ <p id="ptag">orange</p>
+ <p id="ptag">blue</p>
+ <p id="ptag">crymson</p>
+ <p id="ptag">black</p>
+
+<script>
+//   let tag = document.getElementById('ptag')
+//   let tag = document.querySelector('#ptag')
+let tags = document.querySelectorAll('#ptag')
+
+console.log(tags);
+console.log(tags.length);
+
+
+
+for (let i = 0; i < tags.length; i++) {
+    tags[i].style.color = tags[i].innerHTML
+    // tags[i].style.color = 'red'
+    console.log(tags[i]);
+    
+}
+
+
+// for(let i = 0; i < 10; i ++){
+//     console.log(i);
+// }
+
+
+
+
+
+// continue
+
+for (let i = 0; i < 10; i++){
+    if (i % 2 === 0){
+        continue
+    }
+
+    console.log(i);
+}
+
+for(let i = 0; i < 10; i++){
+    if (i === 7) {
+        break
+    }
+    console.log(i);
+}
+</script>
+</body>
+</html> 

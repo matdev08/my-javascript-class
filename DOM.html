@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    #boxes{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+    </style>
+</head>
+<body>
+    
+<h1 id="h1tagtext">Hello class</h1>
+<button onclick="handleclick()">Add styles</button>
+
+<div hidden id="boxes"></div>
+<button onclick="show()">click styles</button>
+
+<script>
+    // DOM.... Document Object Model
+
+let tag = document.getElementById('h1tagtext')
+
+
+tag.innerHTML += 200
+
+
+console.log(tag.style);
+
+console.log(tag.innerHTML);
+
+
+
+
+
+function handleclick(){
+    tag.innerHTML = 3000
+    tag.style.color = 'orange'
+    tag.style.backgroundColor ='purple '
+}
+
+
+
+function show(){
+  boxes. hidden =false  
+}
+
+
+
+</script>
+
+</body>
+</html>
